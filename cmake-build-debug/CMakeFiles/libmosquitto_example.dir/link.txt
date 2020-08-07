@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/cc -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/libmosquitto_example.dir/libmosquitto_example.c.o  -o libmosquitto_example  /opt/local/lib/libmosquitto.dylib 
