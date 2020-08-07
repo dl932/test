@@ -48,11 +48,14 @@ int main(int argc, char* argv[]) {
      * https://mosquitto.org/api/files/mosquitto-h.html#mosquitto_subscribe_callback
      * for descriptions of the arguments to this function.
      * */
+    struct mosquitto *mosq = NULL;
+//    mosq = mosquitto_new(NULL,true,NULL);
+//    mosquitto_connect(mosq,"192.168.1.1.38",1883,60);
     rc = mosquitto_subscribe_callback(on_message,
                                       NULL,
                                       "irc/#",
                                       0,
-                                      "localhost",
+                                      "192.168.1.138",
                                       1883,
                                       NULL,
                                       60,
