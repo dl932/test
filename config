@@ -1,0 +1,17 @@
+Host *
+	User dl932
+        ServerAliveInterval 10
+        ServerAliveCountMax 3
+        ForwardAgent yes
+
+Host lectura
+        User dl932
+        HostName lectura.cs.arizona.edu
+
+Host v11
+        HostName v11.cs.arizona.edu
+        ProxyCommand ssh -e none lectura exec nc %h %p
+        
+Host laplace
+        HostName laplace.cs.arizona.edu
+        ProxyCommand ssh -e none lectura exec nc %h %p

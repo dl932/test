@@ -49,25 +49,24 @@ int main(int argc, char* argv[]) {
      * for descriptions of the arguments to this function.
      * */
     struct mosquitto *mosq = NULL;
-//    mosq = mosquitto_new(NULL,true,NULL);
-//    mosquitto_connect(mosq,"192.168.1.1.38",1883,60);
-    rc = mosquitto_subscribe_callback(on_message,
-                                      NULL,
-                                      "irc/#",
-                                      0,
-                                      "192.168.1.138",
-                                      1883,
-                                      NULL,
-                                      60,
-                                      true,
-                                      NULL,
-                                      NULL,
-                                      NULL,
-                                      NULL);
+    mosq = mosquitto_new(0,true,NULL);
+    mosquitto_connect(mosq,"192.168.1.138",1883,60);
+    mosquitto_publish(mosq,NULL,"recording_start",3,"yes",0,false);
 
-    if (rc) {
-        printf("Error: %s\n", mosquitto_strerror(rc));
-    }
+
+//        mosq = mosquitto_new(0,true,NULL);
+//        mosquitto_connect(mosq,"192.168.1.138",1883,60);
+//        rc=mosquitto_publish(mosq,
+//                                      NULL,
+//                                      "irc",
+//                                      3,
+//                                      "yes",
+//                                      0,
+//                                      false);
+//
+//    if (rc) {
+//        printf("Error: %s\n", mosquitto_strerror(rc));
+
 
     // mosquitto_lib_cleanup must be called to free resources associated with
     // the library.

@@ -9,10 +9,6 @@
 /Users/macforlong/test/libmosquitto_example.c
 mosquitto.h
 -
-stdio.h
--
-stdlib.h
--
 
 /opt/local/include/mosquitto.h
 stdbool.h
